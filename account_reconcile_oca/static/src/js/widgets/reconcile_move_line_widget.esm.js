@@ -3,7 +3,7 @@
 import {View} from "@web/views/view";
 import {registry} from "@web/core/registry";
 
-const {Component, useSubEnv, onMounted} = owl;
+const {Component, useSubEnv} = owl;
 
 export class AccountReconcileMatchWidget extends Component {
     setup() {
@@ -13,13 +13,6 @@ export class AccountReconcileMatchWidget extends Component {
             config: {},
             parentController: this.env.parentController,
         });
-
-        onMounted(() => {
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 100);
-        });
-
     }
     get listViewProperties() {
         return {
